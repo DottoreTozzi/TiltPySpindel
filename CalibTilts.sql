@@ -1,0 +1,10 @@
+USE iSpindle;
+DELETE FROM Calibration WHERE ID BETWEEN 1 AND 8;
+INSERT INTO Calibration (ID, const1, const2, const3) VALUES (1, 0, 0.625, -15.625);
+INSERT INTO Calibration (ID, const1, const2, const3) VALUES (2, 0, 0.625, -15.625);
+INSERT INTO Calibration (ID, const1, const2, const3) VALUES (3, 0, 0.625, -15.625);
+INSERT INTO Calibration (ID, const1, const2, const3) VALUES (4, 0, 0.625, -15.625);
+INSERT INTO Calibration (ID, const1, const2, const3) VALUES (5, 0, 0.625, -15.625);
+INSERT INTO Calibration (ID, const1, const2, const3) VALUES (6, 0, 0.625, -15.625);
+INSERT INTO Calibration (ID, const1, const2, const3) VALUES (7, 0, 0.625, -15.625);
+INSERT INTO Calibration (ID, const1, const2, const3) VALUES (8, 0, 0.625, -15.625);

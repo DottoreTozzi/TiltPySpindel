@@ -147,13 +147,11 @@ def dbgprint(s):
     if DEBUG: print(str(s))
 
 def main():
-    global screen
-
     updateSecs = INTERVAL  # time in seconds between sending data
     firstUpdate = 60  # time in seconds until the very first update
 
-    timestamp = time.time()  # Set time for beginning of loop
-    updateTime = timestamp + firstUpdate  # Set the time for the next update to google sheets
+    timestamp = time.time()  # Get current time for beginning of loop
+    updateTime = timestamp + firstUpdate  # Set the time for the next update
 
     devices = []
 
@@ -182,11 +180,7 @@ def main():
             for dev in devices:
                 if dev['id'] == item['ID']:
                     dev['angle'].append(item['angle'])
-                    # sometimes, when just waking up, the TILT can give extreme off temp readings
-                    t = item['temperature']
-                    if t > 100:
-                        t = 20
-                    dev['temperature'].append(t)
+                    dev['temperature'].append(item['temperature'])
                     dev['gravity'].append(item['gravity'])
 
         # Data is ready!
