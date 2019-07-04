@@ -5,9 +5,9 @@
 
 Still experimental:
 
-Listens to Bluetooth LE 4.0 Beacons and looks for Data coming from a TILT Hydrometer.
-Accumulates this Data over a configurable duration in seconds, averages it and sends it to iSpindle.py.
-TILT sends data approximately every 1-2 seconds, so we are averaging it over this amount of time.
+Listens to Bluetooth LE 4.0 "Beacons" and looks for data coming from a TILT Hydrometer.
+Accumulates this data over a configurable duration in seconds, averages it and sends it to iSpindle.py.
+TILTs send their data approximately every 1-2 seconds, so we are averaging it over this amount of time.
 The Default is 5 minutes.
 
 Usage is very simple, there is almost nothing to install.
