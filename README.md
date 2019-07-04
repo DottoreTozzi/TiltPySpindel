@@ -17,7 +17,7 @@ Ihr braucht nichts zu installieren.
 Also OK, gelogen, 'fast nichts.'
 Außer den folgenden Paketen:
 
-* bluez
+* bluez (wahrscheinlich bereits installiert)
 * python-bluez
 * bluetooth
 

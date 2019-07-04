@@ -19,8 +19,9 @@ Except:
 
 So we shall get these by entering on the console:
 
-```sudo apt-get install bluez python-bluez bluetooth
-
+```
+sudo apt-get install bluez python-bluez bluetooth
+```
 
 In order to start this script as a service (and restart it on reboot):
 
