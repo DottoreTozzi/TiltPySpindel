@@ -24,11 +24,13 @@ So we shall get these by entering on the console:
 
 In order to start this script as a service (and restart it on reboot):
 
-```sudo cp tilt-srv.service /etc/systemd/system
-```sudo systemctl daemon-reload
-```sudo systemctl enable tilt-srv
-```sudo systemctl start tilt-srv
-```sudo mysql < CalibTilts.sql
+```
+sudo cp tilt-srv.service /etc/systemd/system
+sudo systemctl daemon-reload
+sudo systemctl enable tilt-srv
+sudo systemctl start tilt-srv
+sudo mysql < CalibTilts.sql
+```
 
 There's nothing to configure. This will run out-of-the-box.
 

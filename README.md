@@ -22,14 +22,18 @@ Außer den folgenden Paketen:
 * bluetooth
 
 Diese werden also nachinstalliert mit:
-```sudo apt-get install bluez python-bluez bluetooth
+```
+sudo apt-get install bluez python-bluez bluetooth
+```
 
 Um das Skript als Service zu starten (Autostart):
-```sudo cp tilt-srv.service /etc/systemd/system
-```sudo systemctl daemon-reload
-```sudo systemctl enable tilt-srv
-```sudo systemctl start tilt-srv
-```sudo mysql < CalibTilts.sql
+```
+sudo cp tilt-srv.service /etc/systemd/system
+sudo systemctl daemon-reload
+sudo systemctl enable tilt-srv
+sudo systemctl start tilt-srv
+sudo mysql < CalibTilts.sql
+```
 
 Es gibt erst mal nichts zu konfigurieren, das sollte out-of-the box laufen!
 
@@ -46,7 +50,9 @@ Gewicht % des Extrakts (%w/w), scheinbar (aka ˚P) und die Temperatur in Celsius
 Ebenso der Winkel. Dieser entspricht natürlich in keiner Weise dem tatsächlichen Winkel des TILT.
 Vielmehr habe ich hier eine Formel eingebaut, die nachher in den Diagrammen wieder einfach aufzulösen ist:
 
-``` angle: 25 + (gravP * 1.6)
+``` 
+angle: 25 + (gravP * 1.6)
+```
 
 Damit wird auch ziemlich genau der erlaubte bzw. empfohlene Messbereich abgebildet.
 
