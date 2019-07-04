@@ -34,6 +34,8 @@ sudo mysql < CalibTilts.sql
 ```
 
 There's nothing to configure. This will run out-of-the-box.
+We assume that tilt.py is running on the same machine as iSpindle.py.
+If this is not the case, please edit tilt.py and enter the IP Adress iSpindle.py is listening on.
 
 Of course, the data isn't 100% compatible, so we are using the following work-arounds:
 

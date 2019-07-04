@@ -36,6 +36,10 @@ sudo mysql < CalibTilts.sql
 ```
 
 Es gibt erst mal nichts zu konfigurieren, das sollte out-of-the box laufen!
+Es wird angenommen, dass tilt.py auf demselben Rechner läuft wie iSpindle.py.
+Also demselben Raspi oder anderen SBC/NAS/whatever.
+Falls nicht, bitte tilt.py editieren und eine andere IP Adresse eintragen.
+(Default ist localhost, a.k.a. 127.0.0.1).
 
 Die Übernahme der Daten klappt natürlich nicht völlig 1:1.
 
