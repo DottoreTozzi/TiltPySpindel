@@ -1,0 +1,7 @@
+V 1.1 - 23.07.2019
+Fix/New: Ignore obvious artefacts in gravity measurements
+
+V 1.0 - 03.07.2019
+Works. Recognizes multiple TILTs.
+Data is being forwarded to iSpindle.py.
+

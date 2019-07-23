@@ -116,7 +116,8 @@ def getdata():
             if gotData > gotDataCount:
                 tempF = float(output[2])  # convert the string for the temperature to a float type
                 tempC = (tempF - 32) / 1.8
-                gravSG = float(output[3]) / 1000
+                intGravSG = int(output[3])
+                gravSG = float(intGravSG) / 1000
                 gravP = (-1 * 616.868) + (1111.14 * gravSG) - (630.272 * gravSG ** 2) + (135.997 * gravSG ** 3)
                 if METRIC == 1:
                     tiltGrav = gravP
@@ -126,19 +127,21 @@ def getdata():
                     tiltTemp = tempF
                 # tiltTXPower = int(output[4]) # not needed
                 tiltRSSI = int(output[5])
-                newdata = {
-                    'ID': tiltId,
-                    'name': 'Tilt ' + tiltColour,
-                    #'angle': ((gravSG - 0.99) * 1000) / 1.6, # rough estimate
-                    'angle': 25 + (gravP * 1.6),
-                    'temperature': tiltTemp,
-                    'battery': 4.0,
-                    'gravity': tiltGrav,
-                    'interval': INTERVAL,
-                    'rssi': tiltRSSI,
-                    'token': '* ' + tiltBeer
-                }
-                data.append(newdata)
+                # check if readings are within reasonable range (avoid spike artefacts)
+                if (intGravSG >= 985) and (intGravSG <= 1125):
+                  newdata = {
+                      'ID': tiltId,
+                      'name': 'Tilt ' + tiltColour,
+                      #'angle': ((gravSG - 0.99) * 1000) / 1.6, # rough estimate
+                      'angle': 25 + (gravP * 1.6),
+                      'temperature': tiltTemp,
+                      'battery': 4.0,
+                      'gravity': tiltGrav,
+                      'interval': INTERVAL,
+                      'rssi': tiltRSSI,
+                      'token': '* ' + tiltBeer
+                  }
+                  data.append(newdata)
 
     blescan.hci_disable_le_scan(sock)
     return data
